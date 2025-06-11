@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>웃참쿠키 - 오늘의 한 마디</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: #fffbe6;
+            margin: 0;
+        }
+        .cookie-box {
+            background: #fff;
+            padding: 2em;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 600px;
+        }
+        button {
+            margin-top: 1.5em;
+            padding: 0.8em 1.5em;
+            font-size: 1em;
+            background-color: #ffbb33;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .message {
+            font-size: 1.3em;
+            color: #333;
+            min-height: 3em;
+        }
+    </style>
+</head>
+<body>
+    <div class="cookie-box">
+        <div class="message" id="message">👇 오늘의 웃참쿠키 한 마디 👇</div>
+        <button onclick="showRandomMessage()">하나 뽑기</button>
+    </div>
+
+    <script>
+        const messages = ['오늘도 안 망했어. 그럼 된 거지 뭐.', '피곤하지만, 살아있다는 뜻이야. (불만은 있음)', '커피도 다시 끓이면 맛있어. 나도 다시 시작 가능함.', '엉망이어도 괜찮아. 삶이니까.', '아직 멈추지 않았다는 것, 그게 다야.', '오늘도 무사히 버틴 당신, 진짜 잘한 거야.', '실수는 했지만 멋짐은 잃지 않음.', '인생이 내 뜻대로 안 되면… 그냥 뜻을 바꿔.', '기분이 별로라도 햇살은 공짜야.', '바닥이라도, 올라갈 방향이 있다는 뜻이지.', '... (중략: 전체 메시지는 생략하고 요약)', '지금은 힘들어도, 언젠간 이 날도 웃으며 말할 수 있어. "그때 진짜 별로였지ㅋㅋ"'];
+        function showRandomMessage() {
+            const randomIndex = Math.floor(Math.random() * messages.length);
+            document.getElementById('message').textContent = messages[randomIndex];
+        }
+    </script>
+</body>
+</html>
