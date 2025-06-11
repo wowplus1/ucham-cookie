@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웃참쿠키 - 오늘의 희망 메시지</title>
+    <style>
+        body {
+            font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', 'Nanum Gothic', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2em;
+            background: #fdf6e3;
+            margin: 0;
+        }
+        .cookie-box {
+            background: #ffffff;
+            padding: 2em;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 100%;
+            max-width: 600px;
+        }
+        .message {
+            font-size: 1.4em;
+            color: #333;
+            min-height: 3em;
+            margin-bottom: 1.5em;
+        }
+        button {
+            padding: 0.9em 2em;
+            font-size: 1em;
+            background-color: #ffcc66;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #ffaa33;
+        }
+        @media (max-width: 480px) {
+            .message {
+                font-size: 1.2em;
+            }
+            button {
+                width: 100%;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cookie-box">
+        <div class="message" id="message">✨ 오늘의 웃참 메시지를 뽑아보세요 ✨</div>
+        <button onclick="showRandomMessage()">하나 뽑기</button>
+    </div>
+
+    <script>
+        const messages = [
+            "오늘도 안 망했어. 그럼 된 거지 뭐.",
+            "피곤하지만, 살아있다는 뜻이야. (불만은 있음)",
+            "커피도 다시 끓이면 맛있어. 나도 다시 시작 가능함.",
+            "엉망이어도 괜찮아. 삶이니까.",
+            "아직 멈추지 않았다는 것, 그게 다야.",
+            "오늘도 무사히 버틴 당신, 진짜 잘한 거야.",
+            "실수는 했지만 멋짐은 잃지 않음.",
+            "인생이 내 뜻대로 안 되면… 그냥 뜻을 바꿔.",
+            "기분이 별로라도 햇살은 공짜야.",
+            "바닥이라도, 올라갈 방향이 있다는 뜻이지."
+        ];
+        function showRandomMessage() {
+            const randomIndex = Math.floor(Math.random() * messages.length);
+            document.getElementById('message').textContent = messages[randomIndex];
+        }
+    </script>
+</body>
+</html>
